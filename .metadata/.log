@@ -1,0 +1,115 @@
+!SESSION 2024-07-04 10:19:56.094 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=11.0.19
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -data file:/C:/work_spring/ -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+This is a continuation of log file C:\work_spring\.metadata\.bak_0.log
+Created Time: 2024-07-04 10:25:05.329
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-07-04 10:25:05.329
+!MESSAGE No repository found at http://download.eclipse.org/technology/m2e/releases/.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 4 1002 2024-07-04 10:25:24.048
+!MESSAGE HTTP Server Unknown HTTP Response Code (308):http://dl.bintray.com/testng-team/testng-p2-release/content.xml
+!STACK 1
+org.eclipse.ecf.filetransfer.BrowseFileTransferException: HttpComponents connection error response code 308.
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:276)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.ecf.identity 4 0 2024-07-04 10:25:24.050
+!MESSAGE HttpComponents connection error response code 308.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:12.084
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:12.810
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:13.049
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:13.228
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:13.230
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:13.234
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.jdt.core 4 1006 2024-07-04 10:51:13.254
+!MESSAGE C:\Users\kcci\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar is not on its project's build path
+
+!ENTRY org.eclipse.jdt.core 4 1006 2024-07-04 10:51:13.265
+!MESSAGE C:\Users\kcci\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar is not on its project's build path
+
+!ENTRY org.eclipse.jdt.core 4 1006 2024-07-04 10:51:13.266
+!MESSAGE C:\Users\kcci\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar is not on its project's build path
+
+!ENTRY org.eclipse.jdt.core 4 1006 2024-07-04 10:51:13.266
+!MESSAGE C:\Users\kcci\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar is not on its project's build path
+
+!ENTRY org.eclipse.jdt.core 4 1006 2024-07-04 10:51:13.267
+!MESSAGE C:\Users\kcci\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar is not on its project's build path
+
+!ENTRY org.eclipse.jdt.core 4 1006 2024-07-04 10:51:13.267
+!MESSAGE C:\Users\kcci\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar is not on its project's build path
+
+!ENTRY org.eclipse.jdt.core 4 1006 2024-07-04 10:51:13.268
+!MESSAGE C:\Users\kcci\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar is not on its project's build path
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:14.681
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+
+!ENTRY org.eclipse.wst.server.core 4 0 2024-07-04 10:51:14.772
+!MESSAGE Could not delete C:/work_spring/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/groupware9/WEB-INF/lib/mysql-connector-java-5.1.6.jar. May be locked by another process.
+
+!ENTRY org.eclipse.core.filebuffers 4 0 2024-07-04 10:51:15.848
+!MESSAGE Exception when synchronizing
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.filebuffers.ResourceTextFileBuffer.handleFileContentChanged(ResourceTextFileBuffer.java:458)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer$FileSynchronizer$2.execute(ResourceFileBuffer.java:151)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer$SafeFileChange.run(ResourceFileBuffer.java:86)
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer$FileSynchronizer.resourceChanged(ResourceFileBuffer.java:186)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:305)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:295)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:158)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:379)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1502)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1755)
+	at org.eclipse.jst.jsp.core.internal.taglib.TaglibHelperManager$1$1.visit(TaglibHelperManager.java:122)
+	at org.eclipse.core.internal.resources.Resource.lambda$0(Resource.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:85)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:90)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:135)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:55)
+	at org.eclipse.jst.jsp.core.internal.taglib.TaglibHelperManager$1.run(TaglibHelperManager.java:119)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:16.471
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:16.508
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wst.server.core 4 0 2024-07-04 10:51:17.798
+!MESSAGE Could not delete C:/work_spring/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/groupware9/WEB-INF/lib/mysql-connector-java-5.1.6.jar. May be locked by another process.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:28.282
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-07-04 10:51:28.283
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!

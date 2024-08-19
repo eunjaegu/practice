@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="true"/>
+	<item key="J2EE_EXPORT_SOURCE" value="true"/>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v9.0"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Users\kcci\Desktop\ReviewProject.war"/>
+		<item value="C:\Users\kcci\Desktop\todo검색마무리하기.war"/>
+		<item value="C:\Users\kcci\Desktop\todo_페이징,검색차례.war"/>
+		<item value="C:\Users\kcci\Desktop\todo.war"/>
+		<item value="C:\Users\kcci\Desktop\day6_transaction.war"/>
+		<item value="C:\Users\kcci\Desktop\day6_annotation_test.war"/>
+	</list>
+	<list key="J2EE_IMPORT_null">
+		<item value="C:\Users\kcci\Desktop\day5_mybatis_spring_merge.war"/>
+		<item value="C:\Users\kcci\Desktop\day5_mybatis_spring_member3.war"/>
+		<item value="C:\Users\kcci\Desktop\day0_mybatis_spring.war"/>
+		<item value="C:\Users\kcci\Downloads\spring_mybatis_test.war"/>
+		<item value="C:\Users\kcci\Downloads\20240425 spring framework mybatis 사용방법\day4_mybatis.war"/>
+	</list>
+</section>

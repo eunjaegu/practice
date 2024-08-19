@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<!-- mapper -->
+<mapper namespace="mapper.member">
+		<!-- resultMap -->
+		<resultMap id="memResult" type="memberVO"/>
+
+		<!-- selectAllMemberList : select * from -->
+		<select id="selectAllMemberList" resultType="memberVO">
+			<![CDATA[
+				select * from t_shopping_member order by joindate desc
+			]]>
+		</select>
+		
+		<!-- selectMemberById : select * from t_member where id = ? -->
+		<select id="selectMemberById" resultType="memberVO" parameterType="String">
+			<![CDATA[
+				select * from t_shopping_member where member_id=#{member_id}
+			]]>
+		</select>
+	
+		<!-- insertMember (memberVO) : insert into t_member(id,pwd, name, email) values (#{id}, #{pwd}, #{name}, #{email}) -->
+		<insert id="insertMember" parameterType="memberVO">
+			<![CDATA[
+				insert into t_shopping_member(member_id ,member_pw, member_name, tel1, email1) 
+				values (#{member_id }, #{member_pw}, #{member_name}, #{tel1}, #{email1})
+			]]>
+		</insert>
+	
+		<!-- updateMember : update t_member set pwd=?, name=?, email=? where id=? -->
+		<update id="updateMember" parameterType="memberVO">
+			<![CDATA[
+				update t_shopping_member 
+				set member_pw=#{member_pw}, member_name=#{member_name}, tel1=#{tel1}, email1=#{email1}
+				where
+				member_id=#{member_id }
+			]]>
+		</update>
+	
+		<!-- deleteMember : delete from  t_member where id=? -->  
+		<delete id="deleteMember" parameterType="String">
+			<![CDATA[
+				delete from t_shopping_member
+				where
+				member_id=#{member_id }
+			]]>
+		</delete>
+		
+		<select id="foreachSelect" resultMap="memResult"
+			parameterType="java.util.Map">
+			<!-- <include refid="a" /> -->
+	      <![CDATA[
+	        select * from t_shopping_member 
+	          
+	      ]]>
+			where name in
+			<foreach item="item" collection="list" open="(" separator=","
+				close=")">
+				#{item}
+			</foreach>
+			order by joindate desc
+		</select>
+		
+	
+		<insert id="foreachInsert" parameterType="java.util.Map">
+			<foreach item="item" collection="list" open="INSERT ALL"
+				separator=" " close="SELECT * FROM DUAL">
+				INTO t_shopping_member(member_id , member_pw, member_name, email1)
+				VALUES (#{item.member_id},
+				#{item.member_pw},
+				#{item.member_name},
+				#{item.email1})
+			</foreach>
+		</insert>
+		
+		<!-- like 검색 -->
+		<select id="selectLike" resultMap="memResult"
+			parameterType="String">
+	      <![CDATA[
+	         select * from t_shopping_member
+	         where
+	         name like '%' || #{member_name} || '%'		
+	      ]]>
+		</select>
+</mapper>

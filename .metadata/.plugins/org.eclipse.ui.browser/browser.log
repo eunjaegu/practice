@@ -1,0 +1,27 @@
+
+4월 23, 2024 11:59:20.72 NEW SESSION
+4월 23, 2024 11:59:20.72 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 23, 2024 12:18:20.99 [16644:20132:0423/121820.993:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 23, 2024 12:19:26.23 [16644:20132:0423/121926.237:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 23, 2024 12:21:49.31 [16644:20132:0423/122149.317:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 23, 2024 12:39:28.58 [16644:20132:0423/123928.586:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 23, 2024 12:46:20.24 [16644:20132:0423/124620.247:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 23, 2024 13:01:47.88 [16644:20132:0423/130147.885:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 23, 2024 13:01:56.48 [16644:20132:0423/130156.484:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 23, 2024 20:41:33.39 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 23, 2024 20:49:56.96 [8160:17440:0423/204956.961:ERROR:interface_endpoint_client.cc(707)] Message 0 rejected by interface blink.mojom.WidgetHost
+4월 23, 2024 20:49:56.96 [8160:17440:0423/204956.961:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+4월 24, 2024 08:46:35.45 NEW SESSION
+4월 24, 2024 08:46:35.45 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 24, 2024 09:05:01.58 [1488:17216:0424/090501.581:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+4월 29, 2024 09:41:25.56 NEW SESSION
+4월 29, 2024 09:41:25.56 Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 29, 2024 09:57:55.23 [3396:17936:0429/095755.230:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 29, 2024 12:07:23.11 [3396:17936:0429/120723.118:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 29, 2024 12:57:50.59 [3396:17936:0429/125750.593:ERROR:checkin_request.cc(243)] Check-in request got net error: -106
+4월 29, 2024 12:57:54.32 [3396:17936:0429/125750.625:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 29, 2024 15:45:39.23 [3396:12960:0429/154539.234:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost
+4월 29, 2024 15:45:39.23 [3396:12960:0429/154539.235:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost
+4월 29, 2024 15:45:39.23 [3396:12960:0429/154539.235:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper -->
+<mapper namespace="mapper.member">
+
+	<!-- resultMap -->
+	<resultMap id="memResult" type="MemberVO"/>
+
+	<!-- selectAllMemberList : select * from -->
+	<select id="selectAllMemberList" resultMap="memResult">
+      <![CDATA[
+         select * from T_SHOPPING_MEMBER  order by joinDate desc	 	
+      ]]>
+	</select>
+	 
+	 <!-- selectMemberById : select * from T_SHOPPING_MEMBER where id = ? -->
+	<select id="selectMemberById" resultType="memberVO"  parameterType="String" >
+      <![CDATA[
+         select * from T_SHOPPING_MEMBER
+         where
+         member_id=#{member_id}			
+      ]]>
+	 </select>	
+	
+	<!-- selectMemberByPwd : select * from T_SHOPPING_MEMBER where pwd = ? -->
+	<select id="selectMemberByPwd" resultMap="memResult"  parameterType="int" >
+      <![CDATA[
+         select * from T_SHOPPING_MEMBER
+         where
+         pw = #{pw}			
+      ]]>
+    </select>
+    
+    <!-- insertMember : insert into T_SHOPPING_MEMBER(id, pwd, name, email) values (?, ?, ?, ?) -->
+     <insert id="insertMember"  parameterType="memberVO">
+		<![CDATA[
+		 insert into T_SHOPPING_MEMBER (member_id, member_pw, member_name, member_gender,
+			    tel1, tel2, tel3, hp1, hp2, hp3, smssts_yn, email1, email2, emailsts_yn,
+			    zipcode, roadaddress, jibunaddress, namujiaddress, member_birth_y,
+			    member_birth_m, member_birth_d, member_birth_gn, del_yn)
+				values
+			    (#{member_id}, #{member_pw}, #{member_name}, #{member_gender}, #{tel1},
+			    #{tel2}, #{tel3}, #{hp1}, #{hp2}, #{hp3}, #{smssts_yn}, #{email1}, 
+			    #{email2}, #{emailsts_yn}, #{zipcode}, #{roadaddress}, #{jibunaddress}, 
+			    #{namujiaddress}, #{member_birth_y}, #{member_birth_m}, #{member_birth_d},
+			    #{member_birth_gn}, #{del_yn})
+		]]>      
+	</insert>
+   
+   <!-- updateMember : update T_SHOPPING_MEMBER set pwd=?, name=?, email=? where id=? -->
+   <update id="updateMember"  parameterType="memberVO">
+     <![CDATA[
+	     update T_SHOPPING_MEMBER
+	     set member_pw=#{member_pw}, member_name=#{member_name}, email1=#{email1} , email2=#{email2}
+	     where
+	     member_id=#{member_id}
+      ]]>      
+   </update> 
+   
+   <!-- deleteMember : delete from  T_SHOPPING_MEMBER where id=? -->  
+   <update id="deleteMember"  parameterType="String">
+	<![CDATA[
+	    update T_SHOPPING_MEMBER
+	     set del_yn= 'Y'
+	     where
+	     member_id = #{member_id}
+	]]>      
+  </update>
+  
+</mapper>

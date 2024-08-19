@@ -1,0 +1,31 @@
+1714376395647	Rename package 'org.zerock.springex'
+1714376421232	Rename type 'controller'
+1714376423941	Delete element
+1714376504398	Rename package 'com.ej.spring.list.controller'
+1714376736843	Rename package 'org.zerock.springex'
+1714377010757	Rename package 'config'
+1714377014949	Delete element
+1714377051109	Rename package 'controller'
+1714377064605	Rename package 'dto'
+1714377076740	Rename package 'mapper'
+1714377092478	Rename package 'org.zerock.springex'
+1714377101647	Delete element
+1714377110285	Rename type 'MemberController'
+1714377117461	Rename type 'MemberControllerImpl'
+1714377490798	Delete element
+1714380070907	Rename type 'ListController'
+1714380079564	Rename type 'ListControllerImpl'
+1714380707646	Copy file
+1714380720476	Copy file
+1714390239024	Rename resource 'list.jsp'
+1714444118848	Rename resource 'modListForm2.jsp'
+1714444152421	Rename resource 'listForm.jsp'
+1714444200198	Rename resource 'todolist.jsp'
+1714444221458	Rename resource 'todolistForm.jsp'
+1714444586626	Rename resource 'member.xml'
+1714445579423	Rename package 'com.je.spring.list.dao'
+1714451059198	Delete elements
+1714451730542	Rename resource 'listMembers.jsp'
+1714451876901	Rename resource 'memberForm.jsp'
+1714452979336	Rename resource 'modMember.jsp'
+1714453670133	Rename resource 'modList.jsp'

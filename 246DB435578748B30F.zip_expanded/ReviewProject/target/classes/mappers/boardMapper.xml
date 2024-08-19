@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+<!-- 게시물 생성  -->
+<insert id="create">
+	insert into tbl_board(title, content, writer)
+	values(#{title}, #{content}, #{writer})
+</insert>
+
+<!-- 게시물 조회(bno에 해당하는 단일 게시물 조회) -->
+<select id="read" resultType="org.zerock.domain.BoardVO">
+	select
+		*
+	from
+		tbl_board
+	where bno= #{bno}
+</select>
+
+<!-- 게시물 업데이트 -->    
+<update id="update">
+	update tbl_board 
+	set title = #{title}, content = #{content}
+	where bno = #{bno}
+</update>
+
+<!-- 게시물 삭제 -->
+<delete id="delete">
+	delete from tbl_board where bno = #{bno}
+</delete>
+
+<!-- 게시물 조회( 모든 게시물 조회 ) -->
+<select id="listAll" resultType="org.zerock.domain.BoardVO">
+	<![CDATA[
+	select
+		*
+	from
+		tbl_board
+	where bno>0
+	order by bno desc, regdate desc
+	]]>
+</select>
+
+<!-- 페이징된 게시물 조회( Criteria( page, perPageNum ) -->
+<select id="listCriteria" resultType="org.zerock.domain.BoardVO" parameterType="org.zerock.domain.Criteria">
+	<![CDATA[
+	select
+		*
+	from
+		tbl_board
+	where bno>0
+	order by bno desc, regdate desc
+	limit #{pageStart}, #{perPageNum}
+	]]>
+</select>
+
+<!-- 게시물 총 갯수 계산 -->
+<select id="boardTotalCount" resultType="java.lang.Integer">
+	<![CDATA[
+	select
+		count(*)
+	from
+		tbl_board
+	where bno>0
+	]]>
+</select>
+
+
+<!-- 반복되어 재사용되는 sql문은 이렇게 id를 부여하여 <sql> 여기 </sql> 로 감싼다.
+	이때 이 <sql>..</sql>문이 쿼리안에 있으면 안되고 즉 <select> 여기 안에 </select> 있으면 안되고ㅡ
+	아래 처럼 아예 따로 빼놓고 이 sql조각을 포함시켜서 사용하는 방식으로 해야한다. 아니면 에러남.. 
+	즉, 이 sql 조각을 이용할 때는 <include refid="dynamicSearchCondition" />
+	이렇게 포함시키면된다.
+-->
+<sql id="dynamicSearchCondition">
+	
+	<!-- 
+		"searchType == 't'.toString() 
+		1. 여기서 그냥 't'해도 문자열로 인식할 줄 알았는데  정수로 인식해서 .toString()으로 해주어야했다 왜?? 
+		2. '%'#{keyword}'%' 가 될줄 알았는데 안되서 mysql에서 문자열을 연결시켜주는 concat함수를 사용했다. -->
+	<if test = "searchType != null">
+		<if test= "searchType == 't'.toString()">
+		and title like concat("%", #{keyword} ,"%") 
+		</if>
+		<if test= "searchType == 'c'.toString()">
+		and content like concat("%", #{keyword} ,"%")
+		</if>
+		<if test= "searchType == 'w'.toString()">
+		and writer like concat("%", #{keyword} ,"%")
+		</if>
+	</if>	
+</sql>
+
+
+
+<!-- 페이징 + 검색처리된 게시물 조회( SearchCriteria( page, perPageNum, searchType, keyword ) -->
+<select id="listSearchCriteria" resultType="org.zerock.domain.BoardVO" 
+		parameterType="org.zerock.domain.SearchCriteria">
+	<![CDATA[
+	select
+		*
+	from
+		tbl_board
+	where bno>0
+	]]>
+	
+	<include refid="dynamicSearchCondition" />
+	
+	<![CDATA[
+	order by bno desc, regdate desc
+	limit #{pageStart}, #{perPageNum}
+	]]>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 검색 결과 게시물 총 갯수 계산 -->
+<select id="searchBoardTotalCount" resultType="java.lang.Integer" 
+		parameterType="org.zerock.domain.SearchCriteria">
+	<![CDATA[
+	select
+		count(*)
+	from
+		tbl_board
+	where bno>0
+	]]>
+	<include refid="dynamicSearchCondition"></include>
+</select>
+
+
+
+
+
+
+
+  
+    
+    
+</mapper>
+    

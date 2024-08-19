@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;member&apos;&#x0D;&#x0A;- Original project: &apos;day4_mybatis&apos;&#x0D;&#x0A;- Destination element: &apos;member&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     listMembers.jsp&#x0D;&#x0A;     modMember.jsp&#x0D;&#x0A;     memberForm.jsp" description="Copy files" element1="WebContent/test/listMembers.jsp" element2="WebContent/test/modMember.jsp" element3="WebContent/test/memberForm.jsp" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1714368402099" target="/day6_annotation_member/WebContent/WEB-INF/views/member" units="0" version="1.0"/>
+</session>

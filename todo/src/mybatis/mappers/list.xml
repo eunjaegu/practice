@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper -->
+<mapper namespace="mapper.list">
+
+	<!-- resultMap -->
+	<resultMap id="listResult" type="listVO"/>
+
+	<!-- selectAllList : select * from -->
+	<select id="selectAllList" parameterType="String"  resultType="listVO">
+      <![CDATA[
+         select * 
+         from t_list 
+      ]]>
+      <where>
+	      <if test ='result !=null and !result.equals("")'>
+	         result=#{result}	
+	      </if>
+      </where>
+
+	</select>
+	 
+	 <!-- selectlistBytno : select * from t_list where id = ? -->
+	<select id="selectlistBytno" resultType="listVO"  parameterType="String" >
+      <![CDATA[
+         select * from t_list
+         where
+        tno=#{tno}
+      ]]>
+	 </select>	
+    
+    <!-- insertList : insert into t_list(id, pwd, name, email) values (?, ?, ?, ?) -->
+     <insert id="insertList"  parameterType="listVO">
+		<![CDATA[
+		 insert into t_list (tno, title, userId, writer, importance ,tododata)
+		 values (t_list_seq.NEXTVAL,  #{title}, #{userid}, #{writer}, #{importance}, #{tododata})
+		]]>      
+	</insert>
+   
+   <!-- updateList : update t_list set pwd=?, name=?, email=? where id=? -->
+   <update id="updateList"  parameterType="listVO">
+     <![CDATA[
+	     update t_list
+	     set title=#{title}, userid=#{userid}, writer=#{writer}, regdate=#{regdate}, importance=#{importance}, result=#{result}, tododata=#{tododata}
+	     where
+	     tno=#{tno}
+      ]]>      
+   </update> 
+   
+   <!-- deleteList : delete from  t_list where id=? -->  
+   <delete id="deleteList"  parameterType="String">
+	<![CDATA[
+	   delete from  t_list
+	   where
+	   tno=#{tno}
+	]]>      
+  </delete>
+
+
+	<!-- 동적 SQL문 -->
+  <select id="searchList" parameterType="listVO" resultMap="listResult">
+      <![CDATA[
+          select * from t_list
+      ]]>
+      <where>
+         <if test=" title != ''  and  title != null">
+            title=#{title}
+         </if>
+         <if test="duedate != ''  and duedate != null ">
+           and duedate = #{duedate}
+         </if>
+         <if test="writer != ''  and writer != null ">
+           and writer = #{writer}
+         </if>
+         <if test="finished != ''  and finished != null ">
+           and finished = #{finished}
+         </if>
+      </where>
+      order by joinDate desc
+  </select>
+  
+ <!--  
+   <sql id="a">
+    <![CDATA[
+      select * from t_list
+     ]]> 
+   </sql>  -->  
+  
+<!--    
+  <select id="searchMember" parameterType="listVO" resultMap="listResult">
+	     <include refid="a" /> 
+	   <![CDATA[
+         select * from t_list 
+      ]]>
+	  
+       <where>
+		  <choose>
+		      <when test="name != '' and name != null and  email != '' and email != null">
+			     name=#{name} and email=#{email}
+		      </when>
+		      <when test="name != '' and name != null">
+			     name = #{name}
+		      </when>
+		      <when test="email !='' and email != null">
+			    email = #{email}
+		      </when>
+	      </choose>
+       </where>
+       order by joinDate desc
+   </select> -->
+   
+   <select id="foreachSelect" resultMap="listResult" parameterType="java.util.Map">
+      <!-- <include refid="a" /> -->
+      <![CDATA[
+        select * from t_list 
+          
+      ]]>
+      
+      where name in
+      <foreach item="item" collection="list" open="(" separator="," close=")" >
+         #{item}
+      </foreach>
+      order by joinDate desc
+   </select>
+   
+   <insert id="foreachInsert"  parameterType="java.util.Map">
+      <foreach item="item"  collection="list"   open="INSERT ALL" separator=" " close="SELECT * FROM DUAL" >
+          INTO  t_list(id, pwd, name, email)
+          VALUES  (#{item.id},
+                    #{item.pwd},
+                    #{item.name},
+                    #{item.email})
+      </foreach>
+   </insert>
+   
+   <!--  like 검색 -->
+   <select id="selectLike" resultMap="listResult"  parameterType="String" >
+      <![CDATA[
+         select * from t_list
+         where
+         name like '%' || #{name} || '%'		
+      ]]>
+    </select>
+</mapper>
